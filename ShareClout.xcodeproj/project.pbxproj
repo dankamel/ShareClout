@@ -3,23 +3,60 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473B0DA026A9C8420011293C /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 473B0D9F26A9C8420011293C /* SwiftUIX */; };
+		473B0DA326A9C88E0011293C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DA226A9C88E0011293C /* Background.swift */; };
+		473B0DA526A9C8CE0011293C /* MainRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DA426A9C8CE0011293C /* MainRectangle.swift */; };
+		473B0DA726A9C8E90011293C /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DA626A9C8E90011293C /* DesignButton.swift */; };
+		473B0DA926A9C9030011293C /* CloutTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DA826A9C9030011293C /* CloutTextField.swift */; };
+		473B0DAC26A9C92B0011293C /* NewDesignScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DAB26A9C92B0011293C /* NewDesignScreen.swift */; };
+		473B0DAE26A9C9680011293C /* Customister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DAD26A9C9680011293C /* Customister.swift */; };
+		473B0DB026A9C9840011293C /* CompleteColorTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DAF26A9C9840011293C /* CompleteColorTab.swift */; };
+		473B0DB226A9C9A20011293C /* CompletePatternTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DB126A9C9A20011293C /* CompletePatternTab.swift */; };
+		473B0DB526A9CA1E0011293C /* GradientRectangleB_R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DB426A9CA1E0011293C /* GradientRectangleB_R.swift */; };
+		473B0DB726A9CA390011293C /* GradientRectangleP_B_G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DB626A9CA390011293C /* GradientRectangleP_B_G.swift */; };
+		473B0DB926A9CA4C0011293C /* GradientRectangleG_P.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DB826A9CA4C0011293C /* GradientRectangleG_P.swift */; };
+		473B0DBC26A9CA7F0011293C /* RepeatingBitCloutBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DBB26A9CA7F0011293C /* RepeatingBitCloutBackground.swift */; };
+		473B0DBE26A9CAD10011293C /* BigBitCloutLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DBD26A9CAD10011293C /* BigBitCloutLogo.swift */; };
+		473B0DC026A9CB190011293C /* EmptyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DBF26A9CB190011293C /* EmptyPattern.swift */; };
+		473B0DC326A9CB420011293C /* Clout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DC226A9CB420011293C /* Clout.swift */; };
+		473B0DC526A9CBBE0011293C /* CustomiserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DC426A9CBBE0011293C /* CustomiserModel.swift */; };
+		473B0DC726A9CBE40011293C /* PostFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DC626A9CBE40011293C /* PostFound.swift */; };
+		473B0DCB26A9CD860011293C /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0DCA26A9CD860011293C /* MyImageView.swift */; };
 		473F85BC26A9C64F00F40BA7 /* ShareCloutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F85BB26A9C64F00F40BA7 /* ShareCloutApp.swift */; };
-		473F85BE26A9C64F00F40BA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F85BD26A9C64F00F40BA7 /* ContentView.swift */; };
 		473F85C026A9C64F00F40BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473F85BF26A9C64F00F40BA7 /* Assets.xcassets */; };
 		473F85C326A9C64F00F40BA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473F85C226A9C64F00F40BA7 /* Preview Assets.xcassets */; };
+		473F85CE26A9C6A100F40BA7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F85CD26A9C6A100F40BA7 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		473B0DA226A9C88E0011293C /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		473B0DA426A9C8CE0011293C /* MainRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRectangle.swift; sourceTree = "<group>"; };
+		473B0DA626A9C8E90011293C /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		473B0DA826A9C9030011293C /* CloutTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloutTextField.swift; sourceTree = "<group>"; };
+		473B0DAB26A9C92B0011293C /* NewDesignScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDesignScreen.swift; sourceTree = "<group>"; };
+		473B0DAD26A9C9680011293C /* Customister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customister.swift; sourceTree = "<group>"; };
+		473B0DAF26A9C9840011293C /* CompleteColorTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteColorTab.swift; sourceTree = "<group>"; };
+		473B0DB126A9C9A20011293C /* CompletePatternTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePatternTab.swift; sourceTree = "<group>"; };
+		473B0DB426A9CA1E0011293C /* GradientRectangleB_R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRectangleB_R.swift; sourceTree = "<group>"; };
+		473B0DB626A9CA390011293C /* GradientRectangleP_B_G.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRectangleP_B_G.swift; sourceTree = "<group>"; };
+		473B0DB826A9CA4C0011293C /* GradientRectangleG_P.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRectangleG_P.swift; sourceTree = "<group>"; };
+		473B0DBB26A9CA7F0011293C /* RepeatingBitCloutBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingBitCloutBackground.swift; sourceTree = "<group>"; };
+		473B0DBD26A9CAD10011293C /* BigBitCloutLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBitCloutLogo.swift; sourceTree = "<group>"; };
+		473B0DBF26A9CB190011293C /* EmptyPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPattern.swift; sourceTree = "<group>"; };
+		473B0DC226A9CB420011293C /* Clout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clout.swift; sourceTree = "<group>"; };
+		473B0DC426A9CBBE0011293C /* CustomiserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomiserModel.swift; sourceTree = "<group>"; };
+		473B0DC626A9CBE40011293C /* PostFound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFound.swift; sourceTree = "<group>"; };
+		473B0DCA26A9CD860011293C /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
 		473F85B826A9C64F00F40BA7 /* ShareClout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareClout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473F85BB26A9C64F00F40BA7 /* ShareCloutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCloutApp.swift; sourceTree = "<group>"; };
-		473F85BD26A9C64F00F40BA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		473F85BF26A9C64F00F40BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		473F85C226A9C64F00F40BA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		473F85C426A9C64F00F40BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		473F85CD26A9C6A100F40BA7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,12 +64,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473B0DA026A9C8420011293C /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		473B0DA126A9C87D0011293C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				473F85CD26A9C6A100F40BA7 /* Home.swift */,
+				473B0DA226A9C88E0011293C /* Background.swift */,
+				473B0DA426A9C8CE0011293C /* MainRectangle.swift */,
+				473B0DA626A9C8E90011293C /* DesignButton.swift */,
+				473B0DA826A9C9030011293C /* CloutTextField.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		473B0DAA26A9C9190011293C /* NewDesignScreen */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DAB26A9C92B0011293C /* NewDesignScreen.swift */,
+				473B0DAD26A9C9680011293C /* Customister.swift */,
+				473B0DAF26A9C9840011293C /* CompleteColorTab.swift */,
+				473B0DB126A9C9A20011293C /* CompletePatternTab.swift */,
+				473B0DB326A9C9C80011293C /* BackgroundGradients */,
+				473B0DBA26A9CA550011293C /* PatternBackgrounds */,
+			);
+			path = NewDesignScreen;
+			sourceTree = "<group>";
+		};
+		473B0DB326A9C9C80011293C /* BackgroundGradients */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DB426A9CA1E0011293C /* GradientRectangleB_R.swift */,
+				473B0DB626A9CA390011293C /* GradientRectangleP_B_G.swift */,
+				473B0DB826A9CA4C0011293C /* GradientRectangleG_P.swift */,
+			);
+			path = BackgroundGradients;
+			sourceTree = "<group>";
+		};
+		473B0DBA26A9CA550011293C /* PatternBackgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DBB26A9CA7F0011293C /* RepeatingBitCloutBackground.swift */,
+				473B0DBD26A9CAD10011293C /* BigBitCloutLogo.swift */,
+				473B0DBF26A9CB190011293C /* EmptyPattern.swift */,
+			);
+			path = PatternBackgrounds;
+			sourceTree = "<group>";
+		};
+		473B0DC126A9CB300011293C /* Clout */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DC226A9CB420011293C /* Clout.swift */,
+			);
+			path = Clout;
+			sourceTree = "<group>";
+		};
+		473B0DC926A9CD2E0011293C /* HighDefImages */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DCA26A9CD860011293C /* MyImageView.swift */,
+			);
+			path = HighDefImages;
+			sourceTree = "<group>";
+		};
 		473F85AF26A9C64F00F40BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				473F85BB26A9C64F00F40BA7 /* ShareCloutApp.swift */,
-				473F85BD26A9C64F00F40BA7 /* ContentView.swift */,
+				473F85CA26A9C66E00F40BA7 /* Views */,
+				473F85CB26A9C67300F40BA7 /* Models */,
+				473F85CC26A9C67900F40BA7 /* ViewModels */,
 				473F85BF26A9C64F00F40BA7 /* Assets.xcassets */,
 				473F85C426A9C64F00F40BA7 /* Info.plist */,
 				473F85C126A9C64F00F40BA7 /* Preview Content */,
@@ -67,6 +168,33 @@
 				473F85C226A9C64F00F40BA7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		473F85CA26A9C66E00F40BA7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DA126A9C87D0011293C /* Home */,
+				473B0DAA26A9C9190011293C /* NewDesignScreen */,
+				473B0DC126A9CB300011293C /* Clout */,
+				473B0DC926A9CD2E0011293C /* HighDefImages */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		473F85CB26A9C67300F40BA7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				473B0DC426A9CBBE0011293C /* CustomiserModel.swift */,
+				473B0DC626A9CBE40011293C /* PostFound.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		473F85CC26A9C67900F40BA7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +213,9 @@
 			dependencies = (
 			);
 			name = ShareClout;
+			packageProductDependencies = (
+				473B0D9F26A9C8420011293C /* SwiftUIX */,
+			);
 			productName = ShareClout;
 			productReference = 473F85B826A9C64F00F40BA7 /* ShareClout.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 473F85AF26A9C64F00F40BA7;
+			packageReferences = (
+				473B0D9E26A9C8420011293C /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 473F85B926A9C64F00F40BA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +272,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				473F85BE26A9C64F00F40BA7 /* ContentView.swift in Sources */,
+				473B0DCB26A9CD860011293C /* MyImageView.swift in Sources */,
+				473B0DB526A9CA1E0011293C /* GradientRectangleB_R.swift in Sources */,
+				473B0DA526A9C8CE0011293C /* MainRectangle.swift in Sources */,
+				473B0DB926A9CA4C0011293C /* GradientRectangleG_P.swift in Sources */,
+				473B0DA926A9C9030011293C /* CloutTextField.swift in Sources */,
+				473F85CE26A9C6A100F40BA7 /* Home.swift in Sources */,
 				473F85BC26A9C64F00F40BA7 /* ShareCloutApp.swift in Sources */,
+				473B0DB726A9CA390011293C /* GradientRectangleP_B_G.swift in Sources */,
+				473B0DAC26A9C92B0011293C /* NewDesignScreen.swift in Sources */,
+				473B0DBE26A9CAD10011293C /* BigBitCloutLogo.swift in Sources */,
+				473B0DB226A9C9A20011293C /* CompletePatternTab.swift in Sources */,
+				473B0DC026A9CB190011293C /* EmptyPattern.swift in Sources */,
+				473B0DA326A9C88E0011293C /* Background.swift in Sources */,
+				473B0DC326A9CB420011293C /* Clout.swift in Sources */,
+				473B0DAE26A9C9680011293C /* Customister.swift in Sources */,
+				473B0DB026A9C9840011293C /* CompleteColorTab.swift in Sources */,
+				473B0DC526A9CBBE0011293C /* CustomiserModel.swift in Sources */,
+				473B0DA726A9C8E90011293C /* DesignButton.swift in Sources */,
+				473B0DC726A9CBE40011293C /* PostFound.swift in Sources */,
+				473B0DBC26A9CA7F0011293C /* RepeatingBitCloutBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		473B0D9E26A9C8420011293C /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		473B0D9F26A9C8420011293C /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473B0D9E26A9C8420011293C /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 473F85B026A9C64F00F40BA7 /* Project object */;
 }
