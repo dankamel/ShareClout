@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-struct GetPost: View {
+class fetchResults {
     
-    @State public var data = PostFound(postHashHex: "Test")
-    
-    func getData() {
+    func getData(completion: @escaping (Cloutington) -> ()) {
         let parameters =  "{\r\n \"PostHashHex\": \"fc758ab87c6ab63ab54d18d8db63cdc7f3c2587145d0953e904b95928203a1d0\"\r\n}"
         let postData = parameters.data(using: .utf8)
         var request =  URLRequest(url: URL(string: "https://bitclout.com/api/v0/get-single-post")!,timeoutInterval: Double.infinity)
@@ -25,81 +23,49 @@ struct GetPost: View {
             print(error)
             print(response)
             print(responseData)
-            // check for errors, then...
-
+            
             if let resData = responseData {
                 let decoder = JSONDecoder()
                 
                 do
                 {
-                    let finalData = try decoder.decode(Instruction.self, from: resData)
-                    print(finalData.postFound?.body)
+                    let finalData = try decoder.decode(Cloutington.self, from: resData)
+                    DispatchQueue.main.async {
+                        completion(finalData)
+                    }
+                    
                 }
                 catch (let error)
                 {
                     print(error)
                 }
-                
 
             }
-        }
-        task.resume()
-        
-        /*
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
-            DispatchQueue.main.async {
-                
-                print(response)
-                guard let data = data else { return }
-                
-                let decoder = JSONDecoder()
-                
-                do
-                {
-                    let finalData = try decoder.decode(PostFound.self, from: data)
-                    print(finalData.commentCount)
-                }
-                catch (let error)
-                {
-                    print(error.localizedDescription)
-                }
-             
-                 
-            
-                
-               
-                
-
-//                if let data = data {
-//                    do {
-//                        let decoder = JSONDecoder()
-//                        let decodedData = try decoder.decode(CloutPost.self, from: data)
-//                        self.data = decodedData
-//                    } catch {
-//                        print("Something went wrong - ERROR")
-//                    }
-//                }
-            }
-            
-            
             
         }
         task.resume()
-        
-        */
-        
-        
         
     }
+    
+}
+
+struct GetPost: View {
+    
+    @State var clout = Cloutington()
     
     var body: some View {
         
         VStack{
-            Button(action: {self.getData()}, label: {
-                Text("Refresh")
-            })
-            Text(data.postHashHex ?? "N/A")
+            
+            Text(clout.postFound?.body ?? "n/a")
+            
+        }.onAppear() {
+            
+            fetchResults().getData { (clout) in
+                
+                self.clout = clout
+            }
+            
         }
     }
 }
-
