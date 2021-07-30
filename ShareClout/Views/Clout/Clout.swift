@@ -8,9 +8,22 @@
 import SwiftUI
 import SwiftUIX
 
+//function to turn profile pic from string to an image
+
+extension String {
+    
+    func load() -> UIImage {
+        return UIImage()
+    }
+    
+}
+
 struct Clout: View {
     
-    @State var CloutText = "Clout insightfully to earn diamonds abundantly."
+    @State var clout = Cloutington()
+    
+    
+//    @State var CloutText = "Clout insightfully to earn diamonds abundantly."
     
     @State var CloutImage = "ProfilePic"
     
@@ -18,7 +31,7 @@ struct Clout: View {
     
     @State var NoOfComments = "10"
     @State var NoOfReclouts = "5"
-    @State var NoOfLikes = "15"
+//    @State var NoOfLikes = "15"
     @State var NoOfDiamonds = "9"
     
     @State var Username = "danielk"
@@ -28,7 +41,7 @@ struct Clout: View {
     var body: some View {
         ZStack {
             VStack {
-
+                
                 //MARK: - Profile pic, coin pirce and BitClout logo
                 HStack{
                     
@@ -89,7 +102,7 @@ struct Clout: View {
                 Spacer().frame(maxHeight: 5)
                 
                 //MARK: - CloutText
-                Text(CloutText)
+                Text(clout.postFound?.body ?? "n/a")
                     .padding(.horizontal, 30)
                     .font(.system(size: 15, weight: .medium))
                 
@@ -124,13 +137,13 @@ struct Clout: View {
                     
                     HStack{
                         Image(systemName: "heart")
-                        Text(NoOfLikes)
+                        Text(String(clout.postFound?.likeCount ?? 0))
                     }.padding(.bottom, 10)
                     
                     HStack{
                         Image(systemName: "repeat")
                             .rotationEffect(.degrees(90), anchor: .center)
-                        Text(NoOfReclouts)
+                        Text(String(clout.postFound?.recloutCount ?? 0))
                     }.padding(.bottom, 10)
                     
                     
@@ -140,7 +153,7 @@ struct Clout: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxHeight: 20)
-                        Text(NoOfDiamonds)
+                        Text(String(clout.postFound?.diamondCount ?? 0))
                     }.padding(.bottom, 10)
                     
                 }
@@ -158,13 +171,13 @@ struct Clout: View {
             VStack {
                 VisualEffectBlurView(blurStyle: .light, content: {
                     HStack {
-                        Text(Username)
+                        Text(clout.postFound?.profileEntryResponse?.username ?? "n/a")
                             .fontWeight(.semibold)
                             .font(.system(size: 15))
                             .padding(.leading, 5)
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         
-                        if isUserVerified{
+                        if isUserVerified {
                             
                             Image(systemName: "checkmark.seal.fill")
                                 .padding(.trailing, 5)
@@ -183,6 +196,13 @@ struct Clout: View {
             }
             .padding(.top, 250)
             .padding(.leading, 200)
+            
+        }.onAppear() {
+            
+            fetchResults().getData { (clout) in
+                
+                self.clout = clout
+            }
             
         }
         
