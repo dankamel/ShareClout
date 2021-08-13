@@ -22,20 +22,22 @@ struct Clout: View {
     
     @State var clout = Cloutington()
     
+    var customImage = TestingImages()
     
-//    @State var CloutText = "Clout insightfully to earn diamonds abundantly."
+    
+    //    @State var CloutText = "Clout insightfully to earn diamonds abundantly."
     
     @State var CloutImage = "ProfilePic"
     
     @State var CoinPrice = "287.83"
     
-    @State var NoOfComments = "10"
-    @State var NoOfReclouts = "5"
-//    @State var NoOfLikes = "15"
-    @State var NoOfDiamonds = "9"
+    //    @State var NoOfComments = "10"
+    //    @State var NoOfReclouts = "5"
+    //    @State var NoOfLikes = "15"
+    //    @State var NoOfDiamonds = "9"
     
-    @State var Username = "danielk"
-    @State var isUserVerified = true
+    //    @State var Username = "danielk"
+    //    @State var isUserVerified = true
     
     
     var body: some View {
@@ -49,13 +51,7 @@ struct Clout: View {
                     ZStack {
                         //Profile pic
                         HStack {
-                            Image(CloutImage)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxHeight: 50)
-                                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
-                                .padding(.leading, 30)
+                            customImage
                             Spacer()
                         }
                         
@@ -102,7 +98,7 @@ struct Clout: View {
                 Spacer().frame(maxHeight: 5)
                 
                 //MARK: - CloutText
-                Text(clout.postFound?.body ?? "n/a")
+                Text(clout.postFound?.posterPublicKeyBase58Check ?? "n/a")
                     .padding(.horizontal, 30)
                     .font(.system(size: 15, weight: .medium))
                 
@@ -171,16 +167,23 @@ struct Clout: View {
             VStack {
                 VisualEffectBlurView(blurStyle: .light, content: {
                     HStack {
+                        Text("@")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 15))
+                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         Text(clout.postFound?.profileEntryResponse?.username ?? "n/a")
                             .fontWeight(.semibold)
                             .font(.system(size: 15))
-                            .padding(.leading, 5)
+                            //                            .padding(.leading, 5)
+                            .padding(.leading, -9)
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         
-                        if isUserVerified {
+                        if clout.postFound?.profileEntryResponse?.isVerified == true {
                             
                             Image(systemName: "checkmark.seal.fill")
+                                .font(.system(size: 12))
                                 .padding(.trailing, 5)
+                                .padding(.leading, -7)
                             
                         }
                         

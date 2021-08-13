@@ -24,13 +24,14 @@ struct Background: View {
 
             //Commenting out images for now because they look uuuuglllyyy
             
-//            Image("MountainGroup")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-            //animate this to move down and right
+            Image("MountainGroup")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .position(x: 220, y: 300)
+//            animate this to move down and right
 //            Image("MoveableMountain")
-//                .position(x: 300, y: 350)
-//            //animate this to move down and left
+//                .position(x: 220, y: 350)
+            //animate this to move down and left
 //            Image("MoveableMountain")
 //                .position(x: 600, y: 350)
 
