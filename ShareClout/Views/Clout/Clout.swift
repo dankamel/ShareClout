@@ -22,7 +22,7 @@ struct Clout: View {
     
     @State var clout = Cloutington()
     
-    var customImage = TestingImages()
+    var userProfilePic = GetProfilePic()
     
     
     //    @State var CloutText = "Clout insightfully to earn diamonds abundantly."
@@ -51,7 +51,7 @@ struct Clout: View {
                     ZStack {
                         //Profile pic
                         HStack {
-                            customImage
+                            userProfilePic
                             Spacer()
                         }
                         
