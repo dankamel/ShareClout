@@ -11,7 +11,8 @@ import SwiftUI
 struct ShareCloutApp: App {
     var body: some Scene {
         WindowGroup {
-            Home()
+            GetExchangeRateView()
+            
         }
     }
 }

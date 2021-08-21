@@ -10,7 +10,7 @@ import SwiftUI
 class fetchResults {
     
     func getData(completion: @escaping (Cloutington) -> ()) {
-        let parameters =  "{\r\n \"PostHashHex\": \"9df519bc7bec435ab244b55fac2c0f5e99783da73cda7bfea3ec3bc00645beb4\"\r\n}"
+        let parameters =  "{\r\n \"PostHashHex\": \"a00bab1d7b48ddaae74f17093e378bb5412b8399cea846ff4f5e5adf8e598cd3\"\r\n}"
         let postData = parameters.data(using: .utf8)
         var request =  URLRequest(url: URL(string: "https://bitclout.com/api/v0/get-single-post")!,timeoutInterval: Double.infinity)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

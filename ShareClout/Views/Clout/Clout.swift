@@ -24,21 +24,7 @@ struct Clout: View {
     
     var userProfilePic = GetProfilePic()
     
-    
-    //    @State var CloutText = "Clout insightfully to earn diamonds abundantly."
-    
-    @State var CloutImage = "ProfilePic"
-    
     @State var CoinPrice = "287.83"
-    
-    //    @State var NoOfComments = "10"
-    //    @State var NoOfReclouts = "5"
-    //    @State var NoOfLikes = "15"
-    //    @State var NoOfDiamonds = "9"
-    
-    //    @State var Username = "danielk"
-    //    @State var isUserVerified = true
-    
     
     var body: some View {
         ZStack {
@@ -61,7 +47,7 @@ struct Clout: View {
                                 .font(.system(size: 12))
                                 .fontWeight(.semibold)
                                 .padding(.leading, 5)
-                            Text(CoinPrice)
+                            Text(String(clout.postFound?.profileEntryResponse?.coinPriceBitCloutNanos ?? 0))
                                 .font(.system(size: 12))
                                 .fontWeight(.semibold)
                                 .padding(.vertical, 3)
@@ -75,8 +61,6 @@ struct Clout: View {
                         .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 2).fill(Color.white))
                         .padding(.bottom, 50)
                         //.padding(.leading, -70)
-                        
-                        
                         
                     }
                     
