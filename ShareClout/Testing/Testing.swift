@@ -11,7 +11,7 @@ struct Testing: View {
     
     @State var clout = Cloutington()
     
-    //@State var rate = GetExchangeRate()
+    @State var cloutPrice = Exchange()
     
     var priceInClout: String {
         
@@ -22,11 +22,11 @@ struct Testing: View {
         
         let conversionToClout = bitCloutNanos / Double(1000000000.00)
         
-        //let exchangeRate = Double (GetExchangeRate.USDCentsPerBitCloutExchangeRate ?? 0)
+        let exchangeRate = Double(cloutPrice.USDCentsPerBitCloutExchangeRate ?? 0) / Double(100)
+
+        let conversionToUSD = conversionToClout * exchangeRate
         
-        // let conversionToUSD = conversionToClout * (exchangeRate/100)
-        
-        return formatter.string(from: NSNumber(value: conversionToClout)) ?? "n/a"
+        return formatter.string(from: NSNumber(value: conversionToUSD)) ?? "n/a"
         
     }
     
@@ -45,7 +45,11 @@ struct Testing: View {
                 self.clout = clout
             }
             
-            //need to also fetch GetExchangeRate data on appear
+            GetExchangeRate().loadData { (cloutPrice) in
+
+                self.cloutPrice = cloutPrice
+
+            }
             
         }
         

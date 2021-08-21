@@ -8,16 +8,6 @@
 import SwiftUI
 import SwiftUIX
 
-//function to turn profile pic from string to an image
-
-extension String {
-    
-    func load() -> UIImage {
-        return UIImage()
-    }
-    
-}
-
 struct Clout: View {
     
     @State var clout = Cloutington()
@@ -26,11 +16,30 @@ struct Clout: View {
     
     @State var CoinPrice = "287.83"
     
+    @State var cloutPrice = Exchange()
+    
+    var priceInClout: String {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        let bitCloutNanos = Double(clout.postFound?.profileEntryResponse?.coinPriceBitCloutNanos ?? 0)
+        
+        let conversionToClout = bitCloutNanos / Double(1000000000.00)
+        
+        let exchangeRate = Double(cloutPrice.USDCentsPerBitCloutExchangeRate ?? 0) / Double(100)
+
+        let conversionToUSD = conversionToClout * exchangeRate
+        
+        return formatter.string(from: NSNumber(value: conversionToUSD)) ?? "n/a"
+        
+    }
+    
     var body: some View {
         ZStack {
             VStack {
                 
-                //MARK: - Profile pic, coin pirce and BitClout logo
+                //MARK: - Profile pic, coin price and BitClout logo
                 HStack{
                     
                     
@@ -43,24 +52,20 @@ struct Clout: View {
                         
                         //Coin Price
                         HStack{
-                            Text("$")
-                                .font(.system(size: 12))
-                                .fontWeight(.semibold)
-                                .padding(.leading, 5)
-                            Text(String(clout.postFound?.profileEntryResponse?.coinPriceBitCloutNanos ?? 0))
+                            Text(priceInClout)
                                 .font(.system(size: 12))
                                 .fontWeight(.semibold)
                                 .padding(.vertical, 3)
                                 .padding(.horizontal, 5)
-                                .padding(.leading, -9)
                             
                         }
                         .background(Color(#colorLiteral(red: 0.8822851777, green: 0.8823911548, blue: 0.8822489381, alpha: 1)))
                         .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                        .shadow(color: Color(#colorLiteral(red: 0.2241683006, green: 0.2581242323, blue: 0.6071507931, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
+                        .shadow(color: Color(#colorLiteral(red: 0.06202456727, green: 0.07236060716, blue: 0.1719861585, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                         .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 2).fill(Color.white))
                         .padding(.bottom, 50)
-                        //.padding(.leading, -70)
+                        .padding(.top, 5)
+                        .padding(.leading, -45)
                         
                     }
                     
@@ -82,7 +87,7 @@ struct Clout: View {
                 Spacer().frame(maxHeight: 5)
                 
                 //MARK: - CloutText
-                Text(clout.postFound?.posterPublicKeyBase58Check ?? "n/a")
+                Text(clout.postFound?.body ?? "n/a")
                     .padding(.horizontal, 30)
                     .font(.system(size: 15, weight: .medium))
                 
@@ -189,6 +194,12 @@ struct Clout: View {
             fetchResults().getData { (clout) in
                 
                 self.clout = clout
+            }
+            
+            GetExchangeRate().loadData { (cloutPrice) in
+
+                self.cloutPrice = cloutPrice
+
             }
             
         }
