@@ -1,7 +1,7 @@
 ## ShareClout 
 
 #### What is it?
-An iOS app to share BitClout posts to instagram stories.
+An iOS app to design BitClout posts and then share to instagram stories without screenshotting.
 
 #### What problem does it solve?
 BitClout has a distribution problem. 
