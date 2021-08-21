@@ -11,5 +11,9 @@ By being able to seemlessly share posts from BitClout to Web 2 social networks l
 
 #### Social links
 BitClout - https://bitclout.com/u/ShareClout
+
+
 Twitter - https://twitter.com/shareclout
+
+
 Instagram - https://www.instagram.com/sharecloutapp/
