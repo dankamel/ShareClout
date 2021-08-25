@@ -9,6 +9,8 @@ An iOS app to design BitClout posts and then share to instagram stories without 
 BitClout has a distribution problem. 
 By being able to seemlessly share posts from BitClout to Web 2 social networks like Twitter and Instagram, we harness their network effects and spread the word of decentralised social media to the masses. 
 
+#### Demo: https://twitter.com/dankamel/status/1430469810551508995?
+
 #### Social links
 BitClout - https://bitclout.com/u/ShareClout
 
