@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+//I actually no longer need this file because I use IGStoryKit package for all instagram stuff... although maybe I may have to use this in order to provide a custom angled background gradient to Instagram
+
 struct InstagramSharingUtils {
 
   // Returns a URL if Instagram Stories can be opened, otherwise returns nil.
