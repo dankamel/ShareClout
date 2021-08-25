@@ -6,6 +6,27 @@
 //
 
 import SwiftUI
+import IGStoryKit
+
+// extension to save clout to camera roll
+extension View {
+
+    func snapshot() -> UIImage {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+    }
+
+}
 
 struct NewDesignScreen: View {
     
@@ -28,6 +49,16 @@ struct NewDesignScreen: View {
     
     //Left chevron appear only when tab != Color
     @State var shouldHide = false
+    
+    //Share to Insta
+    let igData = IGData(backgroundType: .gradient, colorTop: #colorLiteral(red: 0.3843137324, green: 0.5176470876, blue: 1, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), backgroundImage: nil, contentSticker: UIImage(imageLiteralResourceName: "NewDiamondHands"))
+    
+    // Save Clout to camera roll
+    var cloutView: some View {
+        
+        Clout()
+        
+    }
     
     
     var body: some View {
@@ -151,6 +182,11 @@ struct NewDesignScreen: View {
                                             isBigBitCloutLogoShowing = false
                                             
                                             
+                                        } else if customiser.title == "Share" {
+                                            
+                                            let igDispatcher = IGDispatcher(igData: igData)
+                                                           igDispatcher.start()
+                                            
                                         }
                                         
                                         
@@ -208,6 +244,12 @@ struct NewDesignScreen: View {
                                             
                                             isRepeatingBitCloutBackgroundShowing = false
                                             isBigBitCloutLogoShowing = true
+                                            
+                                        } else if customiser.title == "Share" {
+                                            
+                                            let image = cloutView.snapshot()
+                                            
+                                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                                             
                                         }
                                         
