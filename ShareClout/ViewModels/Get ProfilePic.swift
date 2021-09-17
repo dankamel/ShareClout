@@ -34,10 +34,10 @@ extension String {
 
 struct GetProfilePic: View {
     
-    @State var clout = Cloutington()
+    @StateObject var fetch = fetchResults()
     
     var body: some View {
-        Image(uiImage: "https://bitclout.com/api/v0/get-single-profile-picture/\(clout.postFound?.profileEntryResponse?.publicKeyBase58Check ?? "n/a")".NewLoad())
+        Image(uiImage: "https://bitclout.com/api/v0/get-single-profile-picture/\(fetch.clout.postFound?.profileEntryResponse?.publicKeyBase58Check ?? "n/a")".NewLoad())
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(maxWidth: 40)
@@ -45,14 +45,7 @@ struct GetProfilePic: View {
             .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
             .padding(.leading, 20)
-            .onAppear() {
-                
-                fetchResults().getData { (clout) in
-                    
-                    self.clout = clout
-                }
-                
-            }
+
     }
 }
 

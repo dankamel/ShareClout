@@ -10,7 +10,7 @@ import SwiftUIX
 
 struct Username: View {
     
-    @State var clout = Cloutington()
+    @StateObject var fetch = fetchResults()
     
     var body: some View {
         VStack {
@@ -20,14 +20,14 @@ struct Username: View {
                         .fontWeight(.semibold)
                         .font(.system(size: 15))
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    Text(clout.postFound?.profileEntryResponse?.username ?? "n/a")
+                    Text(fetch.clout.postFound?.profileEntryResponse?.username ?? "n/a")
                         .fontWeight(.semibold)
                         .font(.system(size: 15))
                         //                            .padding(.leading, 5)
                         .padding(.leading, -9)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     
-                    if clout.postFound?.profileEntryResponse?.isVerified == true {
+                    if fetch.clout.postFound?.profileEntryResponse?.isVerified == true {
                         
                         Image(systemName: "checkmark.seal.fill")
                             .font(.system(size: 12))
@@ -39,7 +39,7 @@ struct Username: View {
                 }
                 
             })
-            .frame(width: 150, height: 50)
+            .frame(width: 100, height: 50)
             .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
             
             .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.5).fill(Color.white))
@@ -48,16 +48,6 @@ struct Username: View {
         }
         .padding(.top, 250)
         .padding(.leading, 200)
-        .onAppear() {
-            
-            fetchResults().getData { (clout) in
-                
-                self.clout = clout
-            }
-
-            
-            
-        }
     }
 }
 

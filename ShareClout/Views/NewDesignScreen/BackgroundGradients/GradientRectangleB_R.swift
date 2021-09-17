@@ -12,8 +12,8 @@ struct GradientRectangleB_R: View {
         Rectangle()
             .fill(LinearGradient(
                     gradient: Gradient(stops: [
-                                        .init(color: Color(#colorLiteral(red: 0.3843137324, green: 0.5176470876, blue: 1, alpha: 1)), location: 0.30430516600608826),
-                                        .init(color: Color(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), location: 0.96122807264328)]),
+                                        .init(color: .red, location: 0.30430516600608826),
+                                        .init(color: .blue, location: 0.96122807264328)]),
                     startPoint: UnitPoint(x: 0.038226294105655145, y: 0.03625000673847295),
                     endPoint: UnitPoint(x: 1.000000060049398, y: 1.0387500002230592)))
             .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25)), radius:40, x:0, y:20)

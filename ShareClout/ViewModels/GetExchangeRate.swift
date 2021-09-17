@@ -7,9 +7,20 @@
 
 import SwiftUI
 
-class GetExchangeRate: ObservableObject {
+class getExchangeRate: ObservableObject {
     
-    func loadData(completion: @escaping (Exchange) -> ()) {
+    @Published var cloutPrice = Exchange()
+    @Published var priceDataHasLoaded = false
+    
+    init() {
+        
+        loadData { cloutPrice in
+            self.cloutPrice = cloutPrice
+        }
+        
+    }
+    
+    private func loadData(completion: @escaping (Exchange) -> ()) {
         
         var exchangeRequest =  URLRequest(url: URL(string: "https://bitclout.com/api/v0/get-exchange-rate")!,timeoutInterval: Double.infinity)
         exchangeRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -30,7 +41,10 @@ class GetExchangeRate: ObservableObject {
                     let finalData = try decoder.decode(Exchange.self, from: resData)
                     print(finalData.USDCentsPerBitCloutExchangeRate)
                     DispatchQueue.main.async {
+                        
                         completion(finalData)
+                        self.priceDataHasLoaded = true
+                        
                     }
                     
                 } catch (let error) {
@@ -46,30 +60,5 @@ class GetExchangeRate: ObservableObject {
         
     }
     
-}
-
-//Testing
-
-struct GetExchangeRateView: View {
-    
-    @State var cloutPrice = Exchange()
-    
-    var body: some View {
-        
-        VStack {
-            
-            Text(String(cloutPrice.USDCentsPerBitCloutExchangeRate ?? 0))
-            
-        }.onAppear() {
-
-            GetExchangeRate().loadData { (cloutPrice) in
-
-                self.cloutPrice = cloutPrice
-
-            }
-
-        }
-        
-    }
 }
 
