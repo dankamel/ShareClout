@@ -1,39 +1,32 @@
 //
-//  Clout.swift
+//  fakeClout.swift
 //  ShareClout
 //
-//  Created by Daniel Kamel on 22/07/2021.
+//  Created by Daniel Kamel on 18/09/2021.
 //
 
 import SwiftUI
-import SwiftUIX
-import IGStoryKit
 
-//Snapshot Extension:
 extension View {
-    
-    func theNewOfficialSnapshot() -> UIImage {
+
+    func fakeSnapshot() -> UIImage {
         let controller = UIHostingController(rootView: self)
         let view = controller.view
-        
+
         let targetSize = controller.view.intrinsicContentSize
         view?.bounds = CGRect(origin: .zero, size: targetSize)
         view?.backgroundColor = .clear
-        
+
         let renderer = UIGraphicsImageRenderer(size: targetSize)
-        
+
         return renderer.image { _ in
             view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
         }
-    }    
-    
+    }
+
 }
 
-struct Clout: View {
-    
-    var officialCloutView: some View {
-        Clout()
-    }
+struct fakeClout: View {
     
     @StateObject var fetch = fetchResults()
     
@@ -61,18 +54,11 @@ struct Clout: View {
     
     var body: some View {
         
-        Group {
+        Group{
             
             if fetch.dataHasLoaded {
                 
-                Button(action: {
-                    
-                    let anImage = self.theNewOfficialSnapshot()
-                    let officialIgData = IGData(backgroundType: .gradient, colorTop: #colorLiteral(red: 0.3843137324, green: 0.5176470876, blue: 1, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), backgroundImage: nil, contentSticker: anImage)
-                    let officialIgDispatcher = IGDispatcher(igData: officialIgData)
-                    officialIgDispatcher.start()
-                    
-                }, label:{
+                VStack{
                     
                     ZStack {
                         VStack {
@@ -84,21 +70,13 @@ struct Clout: View {
                                 ZStack {
                                     //Profile pic
                                     HStack {
-                                        Image(uiImage: "https://bitclout.com/api/v0/get-single-profile-picture/\(fetch.clout.postFound?.profileEntryResponse?.publicKeyBase58Check ?? "n/a")".NewLoad())
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 40)
-                                            .frame(maxHeight: 40)
-                                            .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                            .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
-                                            .padding(.leading, 20)
+                                        userProfilePic
                                         Spacer()
                                     }
                                     
                                     //Coin Price
                                     HStack{
                                         Text(priceInClout)
-                                            .foregroundColor(.black)
                                             .font(.system(size: 12))
                                             .fontWeight(.semibold)
                                             .padding(.vertical, 3)
@@ -134,7 +112,6 @@ struct Clout: View {
                             
                             //MARK: - CloutText
                             Text(fetch.clout.postFound?.body ?? "n/a")
-                                .foregroundColor(.black)
                                 .padding(.horizontal, 30)
                                 .font(.system(size: 15, weight: .medium))
                             
@@ -145,11 +122,9 @@ struct Clout: View {
                                 
                                 Text("made with")
                                     .font(.system(size: 15, weight: .thin))
-                                    .foregroundColor(.black)
                                 Text("ShareClout")
                                     .font(.system(size: 15, weight: .regular))
                                     .padding(.leading, -3)
-                                    .foregroundColor(.black)
                                 
                                 
                             }.padding(.trailing, 8)
@@ -171,17 +146,13 @@ struct Clout: View {
                                 
                                 HStack{
                                     Image(systemName: "heart")
-                                        .foregroundColor(.black)
                                     Text(String(fetch.clout.postFound?.likeCount ?? 0))
-                                        .foregroundColor(.black)
                                 }.padding(.bottom, 10)
                                 
                                 HStack{
                                     Image(systemName: "repeat")
                                         .rotationEffect(.degrees(90), anchor: .center)
-                                        .foregroundColor(.black)
                                     Text(String(fetch.clout.postFound?.recloutCount ?? 0))
-                                        .foregroundColor(.black)
                                 }.padding(.bottom, 10)
                                 
                                 
@@ -192,7 +163,6 @@ struct Clout: View {
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxHeight: 20)
                                     Text(String(fetch.clout.postFound?.diamondCount ?? 0))
-                                        .foregroundColor(.black)
                                 }.padding(.bottom, 10)
                             }
                             
@@ -206,70 +176,32 @@ struct Clout: View {
                         .frame(maxWidth: 300)
                         //                .edgesIgnoringSafeArea(.all)
                         
-                        //MARK: Username
-                        VStack {
-                            VisualEffectBlurView(blurStyle: .light, content: {
-                                HStack {
-                                    Text("@")
-                                        .foregroundColor(.black)
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 15))
-                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                    Text(fetch.clout.postFound?.profileEntryResponse?.username ?? "n/a")
-                                        .foregroundColor(.black)
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 15))
-                                        //                            .padding(.leading, 5)
-                                        .padding(.leading, -9)
-                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                    
-                                    if fetch.clout.postFound?.profileEntryResponse?.isVerified == true {
-                                        
-                                        Image(systemName: "checkmark.seal.fill")
-                                            .foregroundColor(.black)
-                                            .font(.system(size: 12))
-                                            .padding(.trailing, 5)
-                                            .padding(.leading, -7)
-                                        
-                                    }
-                                    
-                                }
-                                
-                            })
-                            .frame(width: 100, height: 50)
-                            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                            
-                            .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.5).fill(Color.white))
-                            .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y:10)
-                            
-                        }
-                        .padding(.top, 250)
-                        .padding(.leading, 200)
+                        Username()
                         
                     }
                     
-                })
-                
+                }.onAppear() {
+                    
+                    let fakeImage = self.fakeSnapshot()
+                    print(fakeSnapshot())
+                    
+                }
                 
             } else {
                 
-                ProgressView()
+                Text("this is a joke")
                 
             }
             
-            
         }
-        
         
         
         
     }
 }
 
-struct Clout_Previews: PreviewProvider {
+struct fakeClout_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            Clout()
-        }
+        fakeClout()
     }
 }

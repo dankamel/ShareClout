@@ -60,6 +60,8 @@ struct NewDesignScreen: View {
         
     }
     
+    @StateObject var fetch = fetchResults()
+    
     
     var body: some View {
         
@@ -101,8 +103,10 @@ struct NewDesignScreen: View {
                         BigBitCloutLogo()
                         
                     }
-
-                    Clout().padding(.top, 50)
+                    
+                    Clout()
+                        .padding(.top, 50)
+                    
                     
                 }
                 
@@ -184,8 +188,11 @@ struct NewDesignScreen: View {
                                             
                                         } else if customiser.title == "Share" {
                                             
-                                            let igDispatcher = IGDispatcher(igData: igData)
-                                                           igDispatcher.start()
+//                                            let igDispatcher = IGDispatcher(igData: igData)
+//                                                           igDispatcher.start()
+//                                            
+//                                            let aNewImage = self.theNewOfficialSnapshot()
+//                                            print(aNewImage)
                                             
                                         }
                                         
