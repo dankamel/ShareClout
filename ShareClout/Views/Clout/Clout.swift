@@ -31,15 +31,11 @@ extension View {
 
 struct Clout: View {
     
-    var officialCloutView: some View {
-        Clout()
-    }
-    
     @StateObject var fetch = fetchResults()
     
     @StateObject var exchange = getExchangeRate()
     
-    var userProfilePic = GetProfilePic()
+//    var userProfilePic = GetProfilePic()
     
     var priceInClout: String {
         
@@ -59,6 +55,8 @@ struct Clout: View {
         
     }
     
+    @EnvironmentObject var igGradientColorModel: IgGradientColorModel
+    
     var body: some View {
         
         Group {
@@ -68,7 +66,7 @@ struct Clout: View {
                 Button(action: {
                     
                     let anImage = self.theNewOfficialSnapshot()
-                    let officialIgData = IGData(backgroundType: .gradient, colorTop: #colorLiteral(red: 0.3843137324, green: 0.5176470876, blue: 1, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), backgroundImage: nil, contentSticker: anImage)
+                    let officialIgData = IGData(backgroundType: .gradient, colorTop: igGradientColorModel.colorTopLiteral, colorBottom: igGradientColorModel.colorBottomLiteral, backgroundImage: nil, contentSticker: anImage)
                     let officialIgDispatcher = IGDispatcher(igData: officialIgData)
                     officialIgDispatcher.start()
                     

@@ -50,15 +50,8 @@ struct NewDesignScreen: View {
     //Left chevron appear only when tab != Color
     @State var shouldHide = false
     
-    //Share to Insta
-    let igData = IGData(backgroundType: .gradient, colorTop: #colorLiteral(red: 0.3843137324, green: 0.5176470876, blue: 1, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), backgroundImage: nil, contentSticker: UIImage(imageLiteralResourceName: "NewDiamondHands"))
-    
-    // Save Clout to camera roll
-    var cloutView: some View {
-        
-        Clout()
-        
-    }
+    //Color gradient model magic
+    @EnvironmentObject var igGradientColorModel: IgGradientColorModel
     
     @StateObject var fetch = fetchResults()
     
@@ -180,6 +173,10 @@ struct NewDesignScreen: View {
                                             isGradientRectangleP_B_GShowing = false
                                             isGradientRectangleG_PShowing = false
                                             
+                                            igGradientColorModel.colorTopLiteral = .red
+                                            igGradientColorModel.colorBottomLiteral = .blue
+                                            
+                                            
                                         } else if customiser.title == "Pattern" {
                                             
                                             isRepeatingBitCloutBackgroundShowing = false
@@ -213,8 +210,10 @@ struct NewDesignScreen: View {
                                         if customiser.title == "Color" {
                                             
                                             isGradientRectangleP_B_GShowing = true
-                                            
                                             isGradientRectangleG_PShowing = false
+                                            
+                                            igGradientColorModel.colorTopLiteral = #colorLiteral(red: 0.980392158, green: 0.5450980663, blue: 1, alpha: 1)
+                                            igGradientColorModel.colorBottomLiteral = #colorLiteral(red: 0.16862745583057404, green: 0.8235294222831726, blue: 1, alpha: 1)
                                             
                                         } else if customiser.title == "Pattern" {
                                             
@@ -242,8 +241,10 @@ struct NewDesignScreen: View {
                                         if customiser.title == "Color" {
                                             
                                             isGradientRectangleG_PShowing = true
-                                            
                                             isGradientRectangleP_B_GShowing = false
+                                            
+                                            igGradientColorModel.colorTopLiteral = #colorLiteral(red: 0, green: 0.8588235378, blue: 0.870588243, alpha: 1)
+                                            igGradientColorModel.colorBottomLiteral = #colorLiteral(red: 0.9882352948, green: 0, blue: 1, alpha: 1)
                                             
                                         }
                                         
@@ -252,14 +253,7 @@ struct NewDesignScreen: View {
                                             isRepeatingBitCloutBackgroundShowing = false
                                             isBigBitCloutLogoShowing = true
                                             
-                                        } else if customiser.title == "Share" {
-                                            
-                                            let image = cloutView.snapshot()
-                                            
-                                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                                            
                                         }
-                                        
                                         
                                         
                                         

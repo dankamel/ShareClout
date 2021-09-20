@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct ShareCloutApp: App {
+    
+//    @StateObject private var colorSetting = ColorSetting()
+    
+    @StateObject private var igGradientColorModel = IgGradientColorModel()
+    
     var body: some Scene {
         WindowGroup {
 
-            Home()
+//            fakeContentView().environmentObject(colorSetting)
+            
+            Home().environmentObject(igGradientColorModel)
             
         }
     }
