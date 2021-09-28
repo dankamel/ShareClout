@@ -31,7 +31,7 @@ extension View {
 
 struct Clout: View {
     
-    @StateObject var fetch = ResultFetcher()
+    @StateObject var fetch = fetchResults()
     
     @StateObject var exchange = getExchangeRate()
     

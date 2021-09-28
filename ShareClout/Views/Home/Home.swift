@@ -51,7 +51,7 @@ struct Home: View {
                                 }
                                 
 //                                .onChange(of: textFieldText) { (value) in
-//                                    if value.contains("/posts") {
+//                                    if value.contains("bitclout.com/posts") {
 //                                        isValidBitCloutURL = true
 //                                    } else {
 //                                        isValidBitCloutURL = false

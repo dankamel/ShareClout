@@ -97,6 +97,4 @@ struct StackAnswerTest: View {
     }
 
 
-}
-
-//need to change clout to new class name 
+} 
