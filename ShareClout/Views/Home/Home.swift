@@ -17,10 +17,11 @@ extension View {
 
 struct Home: View {
     
-    @State var textFieldText: String = ""
-    @State var isValidBitCloutURL = false
+    @State var textFieldText: String
+    @State var isValidBitCloutURL = true
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+    @EnvironmentObject var cloutHashHex: CloutHashHex
+    @StateObject var fetch = fetchResults()
     
     var body: some View {
         
@@ -45,15 +46,20 @@ struct Home: View {
                                 .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.5).fill(Color.white))
                                 .shadow(color: Color(#colorLiteral(red: 0.2241683006, green: 0.2581242323, blue: 0.6071507931, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                                 .padding(.top, 55)
+                                .onChange(of: textFieldText) { textFieldText in
+                                    fetch.updateData(postHashHex: textFieldText)
+                                }
                                 
-                                .onChange(of: textFieldText) { (value) in
-                                    if value.contains("/posts") {
-                                        isValidBitCloutURL = true
-                                    } else {
-                                        isValidBitCloutURL = false
-                                    }
-                                    
-                            }
+//                                .onChange(of: textFieldText) { (value) in
+//                                    if value.contains("/posts") {
+//                                        isValidBitCloutURL = true
+//                                    } else {
+//                                        isValidBitCloutURL = false
+//                                    }
+//
+//                            }
+                            
+                            
                         }.frame(maxWidth: 260)
                     }
                         
@@ -73,7 +79,7 @@ struct Home: View {
        
         
         
-        }
+    }
         
         
         
@@ -84,7 +90,8 @@ struct Home: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(textFieldText: "")
     }
 }
+
 

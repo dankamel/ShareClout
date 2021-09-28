@@ -31,7 +31,7 @@ extension View {
 
 struct Clout: View {
     
-    @StateObject var fetch = fetchResults()
+    @StateObject var fetch = ResultFetcher()
     
     @StateObject var exchange = getExchangeRate()
     
@@ -56,6 +56,8 @@ struct Clout: View {
     }
     
     @EnvironmentObject var igGradientColorModel: IgGradientColorModel
+    
+//    @EnvironmentObject var cloutHashHex: CloutHashHex
     
     var body: some View {
         

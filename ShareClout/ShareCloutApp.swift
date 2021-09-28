@@ -13,13 +13,25 @@ struct ShareCloutApp: App {
 //    @StateObject private var colorSetting = ColorSetting()
     
     @StateObject private var igGradientColorModel = IgGradientColorModel()
+    @StateObject private var cloutHashHex = CloutHashHex()
     
     var body: some Scene {
         WindowGroup {
 
 //            fakeContentView().environmentObject(colorSetting)
             
-            Home().environmentObject(igGradientColorModel)
+            Home(textFieldText: "")
+                .environmentObject(cloutHashHex)
+                .environmentObject(igGradientColorModel)
+  
+//            StackAnswerTest()
+            
+            
+
+            
+            
+                
+            
             
         }
     }
