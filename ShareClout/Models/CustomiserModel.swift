@@ -22,11 +22,11 @@ struct CustomiserModel : Identifiable {
 
 let Customiser_Data = [
 
-    CustomiserModel(title: "Color", image1: "ColourGradient1" , image2: "ColourGradient2", image3: "ColourGradient3"),
+    CustomiserModel(title: "Color", image1: "ColourGradient1" , image2: "ColourGradient2", image3: "ColourGradient3")
     
-    CustomiserModel(title: "Pattern", image1: "BlankColor" , image2: "RepeatingOption", image3: "SmallBitCloutLogo"),
-    
-    CustomiserModel(title: "Share", image1: "Instagram" , image2: "Twitter", image3: "Download")
+//    CustomiserModel(title: "Pattern", image1: "BlankColor" , image2: "RepeatingOption", image3: "SmallBitCloutLogo"),
+//
+//    CustomiserModel(title: "Share", image1: "Instagram" , image2: "Twitter", image3: "Download")
 
 
 ]

@@ -122,19 +122,19 @@ struct NewDesignScreen: View {
                                     
                                     
                                     //Left chevron appears only when tab != Color tab
-                                    HStack {
-                                        
-                                        if customiser.title != "Color" {
-                                            
-                                            Button(action: {}, label: {
-                                                Image(systemName: "chevron.left")
-                                                    .foregroundColor(Color(#colorLiteral(red: 0.3814319372, green: 0.3971602917, blue: 0.508882463, alpha: 1)))
-                                                    .font(.system(size: 20, weight: .semibold))
-                                            })
-                                            
-                                        }
-                                        
-                                    }
+//                                    HStack {
+//
+//                                        if customiser.title != "Color" {
+//
+//                                            Button(action: {}, label: {
+//                                                Image(systemName: "chevron.left")
+//                                                    .foregroundColor(Color(#colorLiteral(red: 0.3814319372, green: 0.3971602917, blue: 0.508882463, alpha: 1)))
+//                                                    .font(.system(size: 20, weight: .semibold))
+//                                            })
+//
+//                                        }
+//
+//                                    }
                                     
                                     Spacer()
                                     Spacer()
@@ -146,18 +146,18 @@ struct NewDesignScreen: View {
                                     Spacer()
                                     
                                     //Right chevron dissapears when tab == Share
-                                    HStack {
-                                        
-                                        if customiser.title != "Share" {
-                                        
-                                        Button(action: {}, label: {
-                                            Image(systemName: "chevron.right")
-                                                .foregroundColor(Color(#colorLiteral(red: 0.3814319372, green: 0.3971602917, blue: 0.508882463, alpha: 1)))
-                                                .font(.system(size: 20, weight: .semibold))
-                                        })
-                                            
-                                        }
-                                    }
+//                                    HStack {
+//                                        
+//                                        if customiser.title != "Share" {
+//                                        
+//                                        Button(action: {}, label: {
+//                                            Image(systemName: "chevron.right")
+//                                                .foregroundColor(Color(#colorLiteral(red: 0.3814319372, green: 0.3971602917, blue: 0.508882463, alpha: 1)))
+//                                                .font(.system(size: 20, weight: .semibold))
+//                                        })
+//                                            
+//                                        }
+//                                    }
                                     
                                     Spacer()
                                 }.padding(.bottom, 150)
@@ -181,22 +181,15 @@ struct NewDesignScreen: View {
                                             igGradientColorModel.colorBottomLiteral = .blue
                                             
                                             
-                                        } else if customiser.title == "Pattern" {
-                                            
-                                            isRepeatingBitCloutBackgroundShowing = false
-                                            isBigBitCloutLogoShowing = false
-                                            
-                                            
-                                        } else if customiser.title == "Share" {
-                                            
-//                                            let igDispatcher = IGDispatcher(igData: igData)
-//                                                           igDispatcher.start()
-//                                            
-//                                            let aNewImage = self.theNewOfficialSnapshot()
-//                                            print(aNewImage)
-                                            
                                         }
-                                        
+//                                        else if customiser.title == "Pattern" {
+//
+//                                            isRepeatingBitCloutBackgroundShowing = false
+//                                            isBigBitCloutLogoShowing = false
+//
+//
+//                                        }
+//
                                         
                                         
                                     }, label: {
@@ -219,13 +212,14 @@ struct NewDesignScreen: View {
                                             igGradientColorModel.colorTopLiteral = #colorLiteral(red: 0.980392158, green: 0.5450980663, blue: 1, alpha: 1)
                                             igGradientColorModel.colorBottomLiteral = #colorLiteral(red: 0.16862745583057404, green: 0.8235294222831726, blue: 1, alpha: 1)
                                             
-                                        } else if customiser.title == "Pattern" {
-                                            
-                                            isRepeatingBitCloutBackgroundShowing = true
-                                            isBigBitCloutLogoShowing = false
-                                            
-                                            
                                         }
+//                                        else if customiser.title == "Pattern" {
+//
+//                                            isRepeatingBitCloutBackgroundShowing = true
+//                                            isBigBitCloutLogoShowing = false
+//
+//
+//                                        }
                                         
                                         
                                         
@@ -252,12 +246,12 @@ struct NewDesignScreen: View {
                                             
                                         }
                                         
-                                        else if customiser.title == "Pattern" {
-                                            
-                                            isRepeatingBitCloutBackgroundShowing = false
-                                            isBigBitCloutLogoShowing = true
-                                            
-                                        }
+//                                        else if customiser.title == "Pattern" {
+//
+//                                            isRepeatingBitCloutBackgroundShowing = false
+//                                            isBigBitCloutLogoShowing = true
+//
+//                                        }
                                         
                                         
                                         
@@ -269,6 +263,17 @@ struct NewDesignScreen: View {
                                     })
                                     Spacer()
                                 }.padding(.bottom, 50)
+                                
+                                HStack {
+                                    
+                                    Text("Once you've selected a background color, simply tab on the Clout to Share to Instagram Stories")
+                                        .padding()
+                                        .font(.system(size: 12, weight: .bold))
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2252165219, green: 0.234790791, blue: 0.3038666062, alpha: 1)))
+                                        .multilineTextAlignment(.center)
+                                    
+                                    
+                                }.padding(.bottom, -70)
                                 
                             }
                             
