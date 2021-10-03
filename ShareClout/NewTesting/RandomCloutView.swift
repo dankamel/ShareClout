@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct RandomCloutView: View {
-    var body: some View {
-        Clout()
-    }
-}
-
-struct RandomCloutView_Previews: PreviewProvider {
-    static var previews: some View {
-        RandomCloutView()
-    }
-}
+//struct RandomCloutView: View {
+//    var body: some View {
+//        Clout()
+//    }
+//}
+//
+//struct RandomCloutView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RandomCloutView()
+//    }
+//}

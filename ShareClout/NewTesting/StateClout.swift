@@ -9,25 +9,17 @@ import SwiftUI
 
 struct StateClout: View {
     
-    @State var stateClout = Clout()
-    @StateObject var resultFetcher = ResultFetcher()
-    @State var text = ""
+
     
     var body: some View {
         
         VStack {
-            TextField("Paste Clout Hexcode Here", text: $text)
-                .font(.title2)
-                .padding()
-                .onChange(of: text) { text in
-                    resultFetcher.updateData(postHashHex: text)
-                }
             
-            Clout().onAppear() {
-                
-                resultFetcher.updateData(postHashHex: text)
-                
-            }
+            Circle()
+                .foregroundColor(.red)
+            
+            Circle()
+                .foregroundColor(.blue)
 
             
             

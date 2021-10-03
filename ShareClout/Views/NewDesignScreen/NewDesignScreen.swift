@@ -53,7 +53,11 @@ struct NewDesignScreen: View {
     //Color gradient model magic
     @EnvironmentObject var igGradientColorModel: IgGradientColorModel
     
-    @StateObject var fetch = fetchResults()
+    var resultFetcher = ResultFetcher()
+    
+    init(result: ResultFetcher) {
+        self.resultFetcher = result
+    }
     
     
     var body: some View {
@@ -97,7 +101,7 @@ struct NewDesignScreen: View {
                         
                     }
                     
-                    Clout()
+                    Clout(result: resultFetcher)
                         .padding(.top, 50)
                     
                     
@@ -374,9 +378,9 @@ struct CustomNavView: View {
 }
 
 
-struct NewDesignScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        NewDesignScreen()
-    }
-}
+//struct NewDesignScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewDesignScreen()
+//    }
+//}
 

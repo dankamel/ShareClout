@@ -1,10 +1,10 @@
+////
+////  SnapShotView.swift
+////  ShareClout
+////
+////  Created by Daniel Kamel on 12/09/2021.
+////
 //
-//  SnapShotView.swift
-//  ShareClout
-//
-//  Created by Daniel Kamel on 12/09/2021.
-//
-
 import SwiftUI
 extension View {
     func snapshotFunc() -> UIImage {
@@ -26,9 +26,11 @@ extension View {
 
 struct SnapShotView: View {
     
+    var resultFetcher = ResultFetcher()
+    
     var newCloutView: some View {
         
-        Clout()
+        Clout(result: resultFetcher)
         
     }
     

@@ -20,11 +20,15 @@ struct ShareCloutApp: App {
 
 //            fakeContentView().environmentObject(colorSetting)
             
-            Home(textFieldText: "")
-                .environmentObject(cloutHashHex)
+            Home()
                 .environmentObject(igGradientColorModel)
+                .environmentObject(cloutHashHex)
+            
+
   
-//            StackAnswerTest()
+//            SnapShotView()
+            
+
             
             
 

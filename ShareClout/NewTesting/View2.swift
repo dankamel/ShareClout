@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct View2: View {
-    var body: some View {
-        StackAnswerTest()
-    }
-}
-
-struct View2_Previews: PreviewProvider {
-    static var previews: some View {
-        View2()
-    }
-}
+//struct View2: View {
+//    var body: some View {
+//        StackAnswerTest()
+//    }
+//}
+//
+//struct View2_Previews: PreviewProvider {
+//    static var previews: some View {
+//        View2()
+//    }
+//}

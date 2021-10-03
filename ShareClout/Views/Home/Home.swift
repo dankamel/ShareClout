@@ -17,11 +17,11 @@ extension View {
 
 struct Home: View {
     
-    @State var textFieldText: String
+    @State var text = ""
     @State var isValidBitCloutURL = true
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var cloutHashHex: CloutHashHex
-    @StateObject var fetch = fetchResults()
+    @StateObject var resultFetcher = ResultFetcher()
     
     var body: some View {
         
@@ -36,7 +36,7 @@ struct Home: View {
                         MainRectangle().padding(.bottom, 100)
 
                         ZStack {
-                            TextField("Clout URL", text: $textFieldText)
+                            TextField("Clout URL", text: $text)
                                 .keyboardType(.URL)
                                 .font(.title2)
                                 .padding()
@@ -46,8 +46,8 @@ struct Home: View {
                                 .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.5).fill(Color.white))
                                 .shadow(color: Color(#colorLiteral(red: 0.2241683006, green: 0.2581242323, blue: 0.6071507931, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                                 .padding(.top, 55)
-                                .onChange(of: textFieldText) { textFieldText in
-                                    fetch.updateData(postHashHex: textFieldText)
+                                .onChange(of: text) { text in
+                                    resultFetcher.updateData(postLink: text)
                                 }
                                 
 //                                .onChange(of: textFieldText) { (value) in
@@ -64,7 +64,7 @@ struct Home: View {
                     }
                         
                     NavigationLink(
-                        destination: NewDesignScreen(), label: {
+                        destination: NewDesignScreen(result: resultFetcher), label: {
                             if isValidBitCloutURL {
                                 DesignButton()
                             }
@@ -90,7 +90,7 @@ struct Home: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Home(textFieldText: "")
+        Home()
     }
 }
 
