@@ -266,7 +266,7 @@ struct NewDesignScreen: View {
                                 
                                 HStack {
                                     
-                                    Text("Once you've selected a background color, simply tab on the Clout to Share to Instagram Stories")
+                                    Text("Once you've selected a background color, simply tap on the Clout to Share to Instagram Stories")
                                         .padding()
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(Color(#colorLiteral(red: 0.2252165219, green: 0.234790791, blue: 0.3038666062, alpha: 1)))
