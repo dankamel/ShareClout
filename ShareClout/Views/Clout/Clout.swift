@@ -117,6 +117,39 @@ struct Clout: View {
                                                 .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                                                 .padding(.leading, 20)
                                             Spacer()
+                                            
+                                            VStack {
+                                                
+                                                HStack {
+                                                    Text("@")
+                                                        .foregroundColor(Color(#colorLiteral(red: 0.3419598043, green: 0.3399323225, blue: 0.3435217142, alpha: 1)))
+                                                        .fontWeight(.bold)
+                                                        .font(.system(size: 12))
+                                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                                    Text(resultFetcher.clout.postFound?.profileEntryResponse?.username ?? "n/a")
+                                                        .foregroundColor(Color(#colorLiteral(red: 0.3419598043, green: 0.3399323225, blue: 0.3435217142, alpha: 1)))
+                                                        .fontWeight(.bold)
+                                                        .font(.system(size: 12))
+                                                        .padding(.leading, -9)
+                                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                                    
+                                                    if resultFetcher.clout.postFound?.profileEntryResponse?.isVerified == true {
+                                                        
+                                                        Image(systemName: "checkmark.seal.fill")
+                                                            .foregroundColor(Color(#colorLiteral(red: 0.3419598043, green: 0.3399323225, blue: 0.3435217142, alpha: 1)))
+                                                            .font(.system(size: 12, weight: .bold))
+                                                            .padding(.trailing, 5)
+                                                            .padding(.leading, -7)
+                                                        
+                                                    }
+                                                    
+                                                }
+//                                                .padding(.top, -30)
+//                                                .padding(.trailing, 150)
+                                                
+                                            }
+                                            .padding(.top, 60)
+                                            .padding(.leading, -155)
                                         }
                                         
                                         //Coin Price
@@ -135,7 +168,7 @@ struct Clout: View {
                                         .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 2).fill(Color.white))
                                         .padding(.bottom, 50)
                                         .padding(.top, 5)
-                                        .padding(.leading, -45)
+                                        .padding(.leading, -20)
                                         
                                     }
                                     
@@ -160,28 +193,28 @@ struct Clout: View {
 //                                    Text("@")
 //                                        .foregroundColor(Color(#colorLiteral(red: 0.3419598043, green: 0.3399323225, blue: 0.3435217142, alpha: 1)))
 //                                        .fontWeight(.bold)
-//                                        .font(.system(size: 15))
+//                                        .font(.system(size: 12))
 //                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 //                                    Text(resultFetcher.clout.postFound?.profileEntryResponse?.username ?? "n/a")
 //                                        .foregroundColor(Color(#colorLiteral(red: 0.3419598043, green: 0.3399323225, blue: 0.3435217142, alpha: 1)))
 //                                        .fontWeight(.bold)
-//                                        .font(.system(size: 15))
+//                                        .font(.system(size: 12))
 //                                        .padding(.leading, -9)
 //                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-//                                    
+//
 //                                    if resultFetcher.clout.postFound?.profileEntryResponse?.isVerified == true {
-//                                        
+//
 //                                        Image(systemName: "checkmark.seal.fill")
 //                                            .foregroundColor(Color(#colorLiteral(red: 0.3419598043, green: 0.3399323225, blue: 0.3435217142, alpha: 1)))
 //                                            .font(.system(size: 12, weight: .bold))
 //                                            .padding(.trailing, 5)
 //                                            .padding(.leading, -7)
-//                                        
+//
 //                                    }
-//                                    
+//
 //                                }
 //                                .padding(.top, -30)
-//                                .padding(.trailing, 120)
+//                                .padding(.trailing, 150)
                                 
 
                                 

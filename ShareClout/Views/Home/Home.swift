@@ -18,7 +18,7 @@ extension View {
 struct Home: View {
     
     @State var text = ""
-    @State var isValidBitCloutURL = true
+    @State var isValidBitCloutURL = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var cloutHashHex: CloutHashHex
     @StateObject var resultFetcher = ResultFetcher()
@@ -48,6 +48,12 @@ struct Home: View {
                                 .padding(.top, 55)
                                 .onChange(of: text) { text in
                                     resultFetcher.updateData(postLink: text)
+                                    
+                                    if text.contains("bitclout.com/posts"){
+                                        
+                                        isValidBitCloutURL = true
+                                        
+                                    }
                                 }
                                 
 //                                .onChange(of: textFieldText) { (value) in
