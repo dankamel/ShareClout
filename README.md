@@ -1,6 +1,6 @@
 ## ShareClout 
 
-![IMG_6167](https://user-images.githubusercontent.com/83912435/136046056-3ee80d45-a43e-4fa0-87db-e6f60753877a.PNG)
+![ShareClout ScreenShot](https://user-images.githubusercontent.com/83912435/136046954-78ad0d3d-5a18-4752-938f-a0f1bab9890c.png)
 
 
 
