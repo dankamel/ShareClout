@@ -1,6 +1,8 @@
 ## ShareClout 
 
-<img width="386" alt="ShareClout Instagram Stories" src="https://user-images.githubusercontent.com/83912435/130325297-f7bfb11d-2689-4d4e-8940-3100a487bb29.png">
+![IMG_6167](https://user-images.githubusercontent.com/83912435/136046056-3ee80d45-a43e-4fa0-87db-e6f60753877a.PNG)
+
+
 
 #### What is it?
 An iOS app to design BitClout posts and then share to instagram stories without screenshotting.
@@ -9,7 +11,7 @@ An iOS app to design BitClout posts and then share to instagram stories without 
 BitClout has a distribution problem. 
 By being able to seemlessly share posts from BitClout to Web 2 social networks like Twitter and Instagram, we harness their network effects and spread the word of decentralised social media to the masses. 
 
-#### Demo: https://twitter.com/dankamel/status/1430469810551508995
+#### Demo: https://twitter.com/dankamel/status/1445398190010814465
 
 #### Social links
 BitClout - https://bitclout.com/u/ShareClout
