@@ -24,6 +24,9 @@ struct ShareCloutApp: App {
                 .environmentObject(igGradientColorModel)
                 .environmentObject(cloutHashHex)
             
+            
+            
+            
 
   
 //            SnapShotView()
