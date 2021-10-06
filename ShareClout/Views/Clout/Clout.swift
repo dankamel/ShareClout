@@ -64,6 +64,7 @@ struct Clout: View {
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
         
         let bitCloutNanos = Double(resultFetcher.clout.postFound?.profileEntryResponse?.coinPriceBitCloutNanos ?? 0)
         
