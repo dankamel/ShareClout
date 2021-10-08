@@ -4,7 +4,6 @@
 //
 //  Created by Daniel Kamel on 25/09/2021.
 //
-
 import SwiftUI
 
 class ResultFetcher: ObservableObject {
@@ -82,9 +81,9 @@ class ResultFetcher: ObservableObject {
 //    @State var text = ""
 //
 //    var body: some View {
-//            
+//
 //        NavigationView {
-//        
+//
 //            VStack {
 //        TextField("Paste Clout Hexcode Here", text: $text)
 //            .font(.title2)
@@ -92,18 +91,18 @@ class ResultFetcher: ObservableObject {
 //            .onChange(of: text) { text in
 //                resultFetcher.updateData(postHashHex: text)
 //            }
-//                
+//
 //                Text(resultFetcher.clout.postFound?.body ?? "n/a")
-//                
+//
 //                NavigationLink(
 //                    destination: NewDesignScreen(), label: {
-//                        
+//
 //                            DesignButton()
-//                        
+//
 //                    })
-//        
+//
 //            }
-//            
+//
 //        }
 //
 //    }

@@ -18,26 +18,12 @@ struct ShareCloutApp: App {
     var body: some Scene {
         WindowGroup {
 
-//            fakeContentView().environmentObject(colorSetting)
-            
+
             Home()
                 .environmentObject(igGradientColorModel)
                 .environmentObject(cloutHashHex)
             
             
-            
-            
-
-  
-//            SnapShotView()
-            
-
-            
-            
-
-            
-            
-                
             
             
         }

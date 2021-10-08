@@ -4,7 +4,6 @@
 //
 //  Created by Daniel Kamel on 22/07/2021.
 //
-
 import SwiftUI
 
 class fetchResults: ObservableObject {
