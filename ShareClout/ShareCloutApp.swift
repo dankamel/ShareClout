@@ -22,10 +22,7 @@ struct ShareCloutApp: App {
             Home()
                 .environmentObject(igGradientColorModel)
                 .environmentObject(cloutHashHex)
-            
-            
-            
-            
+
         }
     }
 }
