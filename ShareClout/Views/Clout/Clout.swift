@@ -135,8 +135,8 @@ struct Clout: View {
                                 Image(uiImage: "https://bitclout.com/api/v0/get-single-profile-picture/\(resultFetcher.clout.postFound?.profileEntryResponse?.publicKeyBase58Check ?? "n/a")".NewLoad())
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 40)
-                                    .frame(maxHeight: 40)
+                                    .frame(maxWidth: 45)
+                                    .frame(maxHeight: 45)
                                     .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                     .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                                     .padding(.leading, 20)
@@ -172,8 +172,8 @@ struct Clout: View {
                                     //                                                .padding(.trailing, 150)
                                     
                                 }
-                                .padding(.top, 60)
-                                .padding(.leading, -155)
+                                .padding(.top, 65)
+                                .padding(.leading, -170)
                             }
                             
                             //Coin Price
@@ -198,11 +198,13 @@ struct Clout: View {
                         
                         //BitClout logo
                         HStack {
-                            Image("BigBitCloutLogo")
+                            Image("DeSoLogo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxHeight: 100)
-                                .padding(.trailing, -10)
+                                .frame(maxWidth: 65)
+                                .frame(maxHeight: 80)
+//                                .padding(.trailing, -10)
+                                .padding(.trailing, 5)
                                 .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                             
                         }
@@ -210,7 +212,7 @@ struct Clout: View {
                         
                     }
                     
-                    Spacer().frame(maxHeight: 5)
+                    Spacer().frame(maxHeight: 10)
                     
                     //MARK: - CloutText
                     Text(resultFetcher.clout.postFound?.body ?? "n/a")
@@ -218,11 +220,13 @@ struct Clout: View {
                         .padding(.horizontal, 30)
                         .font(.system(size: 15, weight: .medium))
                     
-                    Spacer().frame(maxHeight: 10)
+                    
                     
                     //MARK: - Images/NFTs
                     
                     if resultFetcher.clout.postFound?.imageURLs != nil {
+                        
+                        Spacer().frame(maxHeight: 5)
                         
                         Image(uiImage: "\(resultFetcher.clout.postFound?.imageURLs?.first ?? "")".NewLoad())
                             .resizable()
@@ -231,11 +235,9 @@ struct Clout: View {
                             .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                         
-                        Spacer().frame(maxHeight: 30)
-                        
                     }
                     
-                   
+                    Spacer().frame(maxHeight: 10)
                     
                     //MARK: - Made with ShareClout
                     HStack {
