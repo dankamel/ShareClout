@@ -221,14 +221,21 @@ struct Clout: View {
                     Spacer().frame(maxHeight: 10)
                     
                     //MARK: - Images/NFTs
-                    Image(uiImage: "\(resultFetcher.clout.postFound?.imageURLs?.first ?? "")".NewLoad())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
-                        .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                            .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
                     
-                    Spacer().frame(maxHeight: 30)
+                    if resultFetcher.clout.postFound?.imageURLs != nil {
+                        
+                        Image(uiImage: "\(resultFetcher.clout.postFound?.imageURLs?.first ?? "")".NewLoad())
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                            .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
+                        
+                        Spacer().frame(maxHeight: 30)
+                        
+                    }
+                    
+                   
                     
                     //MARK: - Made with ShareClout
                     HStack {
