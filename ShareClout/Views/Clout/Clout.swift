@@ -202,7 +202,7 @@ struct Clout: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 65)
-                                .frame(maxHeight: 80)
+                                .frame(maxHeight: 85)
 //                                .padding(.trailing, -10)
                                 .padding(.trailing, 5)
                                 .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y:10)
