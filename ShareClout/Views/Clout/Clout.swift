@@ -164,6 +164,7 @@ struct Clout: View {
                                                 .font(.system(size: 12, weight: .bold))
                                                 .padding(.trailing, 5)
                                                 .padding(.leading, -7)
+                                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                             
                                         }
                                         
